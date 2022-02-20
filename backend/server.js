@@ -1,10 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const colors = require("colors");
+const connectDB = require("./config/db");
 
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
 const port = process.env.PORT;
+
+connectDB();
 
 const app = express();
 
